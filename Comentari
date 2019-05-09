@@ -1,0 +1,24 @@
+Comandos utilizados para vagrant.
+
+Lo primero que haremos sera crear una carpeta para dicha maquina virtual
+#mkdir (nom de la carpeta)
+
+Despues al entrar en la carpeta hacemos la comanda:
+#vagrant init
+
+Seguidamente descargamos el documento que nos proporciona david y hacemos la siguiente comanda:
+#vagrant box add trusty-server-cloudimg-amd64-vagrant-disk1.box
+
+Seguidamente dentro del Vagrantfile buscamos "config.vm.provision" y cambiamos el path al nombre del script que nosotros hemos creado para instalar la pila LAMP.
+
+config.vm.provision "shell", path: "inici.sh"
+
+Despues hacemos:
+#vagrant up
+
+Y para comprobar que nos funciona entramos en la maquina con la comanda:
+#vagrant ssh
+
+
+
+
